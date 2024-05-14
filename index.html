@@ -42,7 +42,19 @@
         <input v-model="AddMeasurement.Date" placeholder="Date" type="number" />
         <button v-on:click="addMeasurement()" class="btn btn-success">Add</button>
         
-        <div>{{addMessage}}</div>  
+        <div>{{addMessage}}</div> 
+        <div>
+            <h2>Update (PUT)</h2>
+            <input v-model.number="updateData.id" placeholder="id" type="number" />
+            <input v-model="updateData.inDoorTemperature" placeholder="Indoor" type="number" />
+            <input v-model="updateData.outDoorTemperature" placeholder="Outdoor" type="number" />
+            <input v-model="updateData.Date" placeholder="Date" type="number" />
+            
+            <button v-on:click="updateCar" class="btn btn-success">Update</button>
+            <div>{{updateMessage}}</div> 
+        </div> 
+
+        
 
     </div>
     <script src="index.js"></script>
