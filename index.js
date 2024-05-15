@@ -19,7 +19,9 @@ Vue.createApp({
                 IndoorTemperature: 0,
                 OutDoorTemperature: 0,
                 Date: 0,
+
             },
+            isVisable: false,
             currentMeasurement: null,// Initialize to null
             recommendedTemp: true,
             
@@ -36,6 +38,9 @@ Vue.createApp({
             this.getCurrentMeasurementWithMaxId(); // Call the method to get the current measurement with the maximum ID
         },
         methods: {
+            toggleTable() {
+                this.isVisable = !this.isVisable;
+            },
         async getAll() {
                 try {
                     const response = await axios.get(url);

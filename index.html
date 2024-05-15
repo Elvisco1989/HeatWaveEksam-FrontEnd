@@ -29,57 +29,23 @@
         <!-- <button v-on:click="temperatureDifference" class="btn btn-success">Temperature Difference</button>
         <p>Outdoor Temperature: {{ currentMeasurement.outDoorTemperature }}</p>
         <p>Temperature Difference: {{ temperatureDifference }}</p> -->
-
-
-
-        <!-- <div v-if="error">{{ error }}</div> -->
-        <!-- <div v-else> -->
-        <!-- <div v-for="measurement in Measurements" :key="measurement.Id">
-                Indoor Temperature: {{ measurement.id }}<br>
-                Indoor Temperature: {{ measurement.inDoorTemperature }}<br>
-                Outdoor Temperature: {{ measurement.outDoorTemperature }}<br>
-                Date Time: {{ measurement.date }}<br>
-                <hr> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <h2>Get All Measurements</h2>
-        <button id="getAllButton" v-on:click="getAll" class="btn btn-primary">Get all measurement </button>
-        <ul id="MeasurementsList" v-if=" Measurements.length">
-            <li v-for="measurement in  Measurements" :key="measurement.id">
-                <p>Id: {{ measurement.id }}</p>
-                <p>Indoor: {{ measurement.inDoorTemperature }}</p>
-                <p>Outdoor: {{ measurement.outDoorTemperature}}</p>
-                <p>Date: {{ measurement.date}}</p>
-
-            </li>
-
-        </ul>
-        <div v-else>No measurement</div>
-
-        <!-- <h2>AddMeasurement (POST)</h2>
-        <input v-model="AddMeasurement.id" placeholder="Id" type="number" />
-        <input v-model="AddMeasurement.inDoorTemperature" placeholder="Indoor" type="number" />
-        <input v-model="AddMeasurement.outDoorTemperature" placeholder="Outdoor" type="number" />
-        <input v-model="AddMeasurement.Date" placeholder="Date" type="number" />
-        <button v-on:click="addMeasurement()" class="btn btn-success">Add</button>
         
-        <div>{{addMessage}}</div>  -->
-        <!-- <div>
-            <h2>Update (PUT)</h2>
-            <input v-model.number="updateData.id" placeholder="id" type="number" />
-            <input v-model="updateData.inDoorTemperature" placeholder="Indoor" type="number" />
-            <input v-model="updateData.outDoorTemperature" placeholder="Outdoor" type="number" />
-            <input v-model="updateData.Date" placeholder="Date" type="number" />
-            
-            <!-- <button v-on:click="updateCar" class="btn btn-success">Update</button>
-            <div>{{updateMessage}}</div>  -->
-        <!-- </div>  --> -->
-
-
-
-
-
-    </div>
+        <button id="getAllButton" v-on:click="toggleTable" class="btn btn-primary">Get all measurement </button>
+        <div v-if="isVisable">
+            <ul id="MeasurementsList" v-if=" Measurements.length">
+                <li v-for="measurement in  Measurements" :key="measurement.id">
+                    <p>Id: {{ measurement.id }}</p>
+                    <p>Indoor: {{ measurement.inDoorTemperature }}</p>
+                    <p>Outdoor: {{ measurement.outDoorTemperature}}</p>
+                    <p>Date: {{ measurement.date}}</p>
+    
+                </li>
+    
+            </ul>
+            <div v-else>No measurement</div>
+        </div>
+       
+ </div>
     <script src="index.js"></script>
 </body>
 
